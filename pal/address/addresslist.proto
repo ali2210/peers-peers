@@ -23,9 +23,9 @@ message Contacts{
 }
 
 service MyBook{
-    rpc AddPeers (Peers) returns (Contacts);
-    rpc DisplayPeers (Peers) returns (Contacts);
-    rpc DeletePeers (Contacts) returns (Contacts);
+    rpc AddPeers (Peers) returns (Peers);
+    rpc DisplayPeers (Peers) returns (Peers);
+    rpc DeletePeers (Contacts) returns (Peers);
 }
 
 
