@@ -1,0 +1,32 @@
+
+// @define version
+syntax = "proto3";
+
+// @add package
+package address;
+
+// @import packages or where generated code
+// import "pal/address/addresslist.proto";
+
+// @add go_package 
+ option go_package="https://github.com/ali2210/peers-peers";
+
+message Peers{
+    string name = 1;
+    int32 uid = 2;
+    bool eve = 3;
+    string pwallet = 4;
+}
+
+message Contacts{
+    repeated Peers friend = 1;
+}
+
+service MyBook{
+    rpc AddPeers (Peers) returns (Contacts);
+    rpc DisplayPeers (Peers) returns (Contacts);
+    rpc DeletePeers (Peers) returns (Contacts);
+}
+
+
+
