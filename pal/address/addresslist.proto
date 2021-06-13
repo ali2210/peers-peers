@@ -9,7 +9,7 @@ package address;
 // import "pal/address/addresslist.proto";
 
 // @add go_package 
- option go_package="https://github.com/ali2210/peers-peers";
+ option go_package="pal/address";
 
 message Peers{
     string name = 1;
@@ -25,7 +25,7 @@ message Contacts{
 service MyBook{
     rpc AddPeers (Peers) returns (Contacts);
     rpc DisplayPeers (Peers) returns (Contacts);
-    rpc DeletePeers (Peers) returns (Contacts);
+    rpc DeletePeers (Contacts) returns (Contacts);
 }
 
 
