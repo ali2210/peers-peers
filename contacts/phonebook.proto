@@ -1,0 +1,29 @@
+
+syntax = "proto3";
+
+package contacts;
+
+import "peers-peers/contacts";
+
+option go_package = "github.com/ali2210/peers-peers/contacts";
+
+message Contact{
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+}
+
+message Phone{
+    string name = 2;
+}
+
+message List{
+    repeated Contact friends = 4;
+}
+
+service AddressBook{
+    rpc AddContact(Contact) returns(List);
+    rpc FindContact(Phone) returns (List);
+}
+
+
