@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package contacts;
 
-import "peers-peers/contacts";
+// import "peers-peers/contacts";
 
 option go_package = "github.com/ali2210/peers-peers/contacts";
 
