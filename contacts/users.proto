@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package contacts;
+
+option go_package = "github.com/ali2210/peers-peers/contacts";
+
+service PeersService {
+    rpc AddContact (Friends) returns (Pal);
+}
+
+
+message Friends {
+    int64 id = 1;
+    string name = 2;
+    string phone = 3;
+    string email = 4; 
+}
+
+message Pal {
+    repeated Friends palx = 5;
+}

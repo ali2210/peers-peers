@@ -1,62 +1,26 @@
 package protos
 
-
-
 import(
 	"github.com/ali2210/peers-peers/contacts"
+	"context"
+	"fmt"
 )
 
-var (
-	lists_contact []contacts.List
-)
 
-type PhoneBookService interface {
-	AddContact(contxt context.Context, peer contacts.Contact) (contacts.List)
-	FindContact(contxt context.Context, info contacts.Phone)(contacts.List)
+// var(
+// 	group contacts.Pal
+// )
+
+type Phonebook_Server struct {}
+
+func(book *Phonebook_Server) AddContact(ctx context.Context, peers contacts.Friends)(contacts.Pal){
+	 
+	class := make([]contacts.Friends, 0)
+	class = append(class, peers)
+	 fmt.Println("Class:", class)
+	 return contacts.Pal{}
 }
 
-type PeerBook struct {}
+// func NewSizeof(n int){group = make([]contacts.Pal, n)}
 
-func NewPeerBook() PhoneBookService{return &PeerBook{}}
-
-func (book *PeerBook) AddContact(contxt context.Context, peer []contacts.Contact) (contacts.List){
-	
-	if len(peer) == 0{
-		SizeOfListContacts(len(peer))
-		return contacts.List{peer}
-	}
-	
-	sizeOfListContacts(len(peer))
-	
-	for v := range getSize() {
-		lists_contact = append(lists_contact, peer[v])
-	}
-	return lists_contact
-}
-
-func (book *PeerBook) FindContact(contxt context.Context, info contacts.Phone)(contacts.List){
-	
-	if GetSize() > 0{
-			for v := range getListTxs() {
-				if v == info.GetName(){
-					return lists_contact[v]
-				}
-			}
-	}
-	return lists_contact[-1]
-}
-
-
-func sizeOfListContacts(n int){
-	lists_contact := make([]contacts.Contact, n)
-}
-
-func getListTxs() []contacts.Contact{
-	return lists_contact
-}
-
-func getSize() int{
-	return len(lists_contact)-1
-}
-
-
+// func GetLen()int{return len(group)}
