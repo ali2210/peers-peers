@@ -12,15 +12,17 @@ import(
 	class []*contacts.Friends
  )
 
-type Phonebook_Server struct {}
+type Phonebook_Server struct {contacts.UnimplementedServer}
 
-func(book *Phonebook_Server) AddContact(ctx context.Context, peers contacts.Friends)(contacts.Pal){
+func(book *Phonebook_Server) AddContact(ctx context.Context, peers *contacts.Friends)(*contacts.Pal){
 
 	class = make([]*contacts.Friends, 0)
-	class = append(class, &peers)
+	class = append(class, peers)
 	group.Palx = class
-	 return group
+	 return &group
 }
+
+
 
 
 

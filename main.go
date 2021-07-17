@@ -14,16 +14,9 @@ var  (
 )
 
 func main() {
-	port := "8900"
-	fmt.Println("GRPC started...")
-	server, listen := grpcHandler.StartGrpc(port)
+	fmt.Println("Data serialization started with protobuf ...")
 	dairy := Phonebook_Server{}
-	fmt.Println("PhoneBook:", dairy)
-	profile := dairy.AddContact(context.Background(), contacts.Friends{Id: 0, Name: "Ali", Email:"alideveloper95@gmail.com", Phone:"+92-",})
+	profile := dairy.AddContact(context.Background(), &contacts.Friends{Id: 0, Name: "Ali", Email:"alideveloper95@gmail.com", Phone:"+92-",})
 	fmt.Println("update:", profile.GetPalx())
-	err := server.Serve(listen); if err != nil{
-		fmt.Println("Port Busy:", err.Error())
-		return
-	}
 	
 }
