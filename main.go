@@ -19,8 +19,8 @@ func main() {
 	server, listen := grpcHandler.StartGrpc(port)
 	dairy := Phonebook_Server{}
 	fmt.Println("PhoneBook:", dairy)
-	profile := dairy.AddContact(context.Background(), contacts.Friends{Id: 0, Name: "Ali", Email:"", Phone:"",})
-	fmt.Println(profile)
+	profile := dairy.AddContact(context.Background(), contacts.Friends{Id: 0, Name: "Ali", Email:"alideveloper95@gmail.com", Phone:"+92-",})
+	fmt.Println("update:", profile.GetPalx())
 	err := server.Serve(listen); if err != nil{
 		fmt.Println("Port Busy:", err.Error())
 		return
