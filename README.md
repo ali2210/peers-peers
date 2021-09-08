@@ -1,5 +1,5 @@
 # peers-peers
-Project must be inside go package src 
+    Project must be inside go package src 
 
     ## Steps for install protobuf 
        
